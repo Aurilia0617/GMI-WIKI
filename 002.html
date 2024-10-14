@@ -1,0 +1,617 @@
+<!doctype html>
+<html style='font-size:18px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "MonoLisa Trial","Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>002</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><div>    <center>    <img src="https://pic.imgdb.cn/item/670b8967d29ded1a8cdfc4ba.png">    <br>        <font size='2'><font color='#BBBFCA'><!--这里写图注-->    </font></font>        </font></font>    </center></div><p>&nbsp;</p><p>&nbsp;</p><p><span>开始写插件</span></p><p><span>在序章中我提出了这次写插件的指导意见：</span></p><p><strong><font color='#00A8CC'><span>go语言写前置，lua语言写调用</span></font></strong></p><p>&nbsp;</p><p><font size='5'><font color='#FC5185'><strong><span>01 ◣</span></strong></font></font></p><p><span>用go语言编写各种前置插件，</span><strong><font color='#EA5455'><span>提供几个API</span></font><span>，</span></strong><span>每个API都可以使游戏发生一些变化，go前置本身不会直接使用这些API。</span></p><p>&nbsp;</p><p><font size='5'><font color='#FC5185'><strong><span>02 ◣</span></strong></font></font></p><p><span>把API放在指定的地方</span><strong><font color='#EA5455'><span>存下来</span></font></strong><span>，这个地方一般由机器人提供，我称之为共享表，插件可以通过这个共享表使用同一份数据。</span></p><p>&nbsp;</p><p><font size='5'><font color='#FC5185'><strong><span>03 ◣</span></strong></font></font></p><p><span>lua插件负责从指定的地方</span><strong><font color='#EA5455'><span>拿出API</span></font></strong><span>，并决定什么时候使用就行，剩下的lua插件就不用去关心了。</span></p><p>&nbsp;</p><p><span>则大致流程将如下：</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670b9150d29ded1a8ce9dab2.png">    <br>        <font size='2'><font color='#BBBFCA'><!--这里写图注-->    </font></font>        </font></font>    </center></div><p><span>总结就是：</span></p><p><font color='#EA5455'><strong><span>复杂的前置给go插件干</span></strong></font></p><p><font color='#EA5455'><strong><span>简单的调用给lua插件干</span></strong></font></p><p>&nbsp;</p><p><img src="https://i0.hdslb.com/bfs/article/02db465212d3c374a43c60fa2625cc1caeaab796.png" referrerpolicy="no-referrer" alt="img"></p><p>&nbsp;</p><p><span>从上述框架出发</span></p><p><img src="https://pic.imgdb.cn/item/670bd106d29ded1a8c200e90.png" referrerpolicy="no-referrer" alt="image-20241013184447315"></p><p><span>	</span><span>绿色部分机器人已经提供了，我们</span><font color='#EA5455'><strong><span>只需要看右边红色部分</span></strong></font><span>。那么下一步，开始计划要写什么样的前置。</span></p><p>&nbsp;</p><p><span>	</span><span>由于服主的神隐以及其他管理的摸鱼，我决定搭成生存服，插件写好一放完事</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670b9433d29ded1a8cec4637.gif">    <br>        <font size='2'><font color='#BBBFCA'>玩家死活关我什么事</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>	</span><span>不过为了兼顾将来可能的转型，不能只看生存服，需要将非生存服专属的接口分隔开，那么右边红色部分可拓展为下述结构：</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670b9883d29ded1a8cefc094.png">    <br>        <font size='2'><font color='#BBBFCA'><!--这里写图注-->    </font></font>        </font></font>    </center></div><p>&nbsp;</p><p><font size='5'><font color='#FC5185'><strong><span>GMI ◣</span></strong></font></font></p><p><span>即通用管理接口：</span></p><p><strong><font color='#EA5455'><span>G</span></font></strong><span>eneral </span><strong><font color='#EA5455'><span>M</span></font></strong><span>anagement </span><strong><font color='#EA5455'><span>I</span></font></strong><span>nterfaces</span></p><p>&nbsp;</p><p><font size='5'><font color='#FC5185'><strong><span>GMILib ◣</span></strong></font></font></p><p><span>即通用管理接口</span><font color='#EA5455'><span>函数库</span></font><span>，提供一些可能用到的计算函数和管理工具。主要是用来传入参数获得计算结果的玩意，不会对游戏产生直接影响。</span></p><p>&nbsp;</p><p><font size='5'><font color='#FC5185'><strong><span>GMI-Ess ◣</span></strong></font></font></p><p><span>即</span><font color='#EA5455'><span>基础</span></font><span>管理接口，使用这些接口将会对游戏产生直接影响，里面都是比较基础的接口，不包含特色玩法。</span></p><p>&nbsp;</p><p><font size='5'><font color='#FC5185'><strong><span>GMI-Sur ◣</span></strong></font></font></p><p><span>即</span><font color='#EA5455'><span>生存服专用</span></font><span>管理接口，使用这些接口将会对游戏产生直接影响，里面基本是生存服才用到的玩法型接口。</span></p><p>&nbsp;</p><p><font size='5'><font color='#FC5185'><strong><span>GMI-Enh系 ◣</span></strong></font></font></p><p><span>多个前置插件的统称，即</span><font color='#EA5455'><span>增强型</span></font><span>管理接口，这些接口会改变其他管理接口，使得它们的执行逻辑改变。</span></p><p><span>例如</span><font color='#BBBFCA'><font size='1'><span>只是设想不一定能实现</span></font></font><span>，经济增强插件可以使GMI-Ess在扣除玩家金钱</span><font color='#BBBFCA'><font size='1'><span>一般情况下只是数据库</span></font></font><span>时可以也识别有特殊标志的实物作为货币。</span></p><p>&nbsp;</p><hr /><p><span>对于整个体系而言，每个部分我都给了一个称谓方便接下来的表述：</span></p><ul><li><p><span>对于最基础的GMIlib,它不依赖其他库，我后续称其为</span><font color='#EA5455'><strong><span>工具库</span></strong></font><span>。</span></p></li><li><p><span>对于GMI-Ess和GMI-Sur这些要依赖其他库，但也是作为最终插件的前置库的库，我将称其为</span><font color='#EA5455'><strong><span>GMI系前置库</span></strong></font><span>。</span></p></li><li><p><span>对于GMI-Enh我直接称其为</span><font color='#EA5455'><strong><span>增强库</span></strong></font><span>。</span></p></li><li><p><span>对于最后要使用这些库的插件我称之为</span><font color='#EA5455'><strong><span>附属插件</span></strong></font><span>。</span></p></li><li><p><span>相对的，不使用这些前置库的插件称为</span><font color='#EA5455'><strong><span>普通插件</span></strong></font><span>。</span></p></li></ul><div>    <center>    <img src="https://pic.imgdb.cn/item/670ba1a2d29ded1a8cf7e4c5.png">    <br>        <font size='2'><font color='#BBBFCA'>完善后的结构图与名称</font></font>        </font></font>    </center></div><p><span>至此，最外层的框架设计好了，开始扣细节</span></p><p>&nbsp;</p><hr /><p>&nbsp;</p><p><span>既是要写给插件用的前置库，自然要从插件处开始往下写，首先看这里</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670ba65bd29ded1a8cfbf3ec.png">    <br>        <font size='2'><font color='#BBBFCA'><!--这里写图注-->    </font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>虽然是为了写给lua插件用，但写都写了总不能漏了go插件。但如果我写成这样：</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670ba753d29ded1a8cfca735.png">    <br>        <font size='2'><font color='#BBBFCA'>两个接口分开生成</font></font>        </font></font>    </center></div><p><span>那么就意味着我每写一个功能就要分别在go插件和lua插件测试一次，十分麻烦，因此我打算改为下述结构：</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670ba853d29ded1a8cfd9bc8.png">    <br>        <font size='2'><font color='#BBBFCA'>go不变，lua改为调用go接口</font></font>        </font></font>    </center></div><p><span>这样写，那么lua插件正常，则go插件也一定正常，我</span><font color='#EA5455'><strong><span>只需要测试lua插件</span></strong></font><span>即可。</span></p><p>&nbsp;</p><p><img src="https://i0.hdslb.com/bfs/article/02db465212d3c374a43c60fa2625cc1caeaab796.png" referrerpolicy="no-referrer" alt="img"></p><p>&nbsp;</p><p><span>开始进入本章的主题：写个HelloWorld</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>	</span><span>从工具库开始，新建一个lua插件，从共享表中拿出前置库，然后调用helloWorld方法。</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670baac4d29ded1a8cff4ba3.png">    <br>        <font size='2'><font color='#BBBFCA'>两行代码搞腚</font></font>        </font></font>    </center></div><p><span>但是我稍微想了一下，有两个问题：</span></p><p>&nbsp;</p><p><span>	</span><span>前置库也是一个插件，它不可能凭空调用lua插件的框架，比如用lua插件的名义写日志等等，我们必须</span><font color='#EA5455'><strong><span>让前置库获得lua插件的框架</span></strong></font><span>。</span></p><p>&nbsp;</p><p><span>	</span><span>其次，随着前置库的更新，必然会出现版本的不兼容，我们在获得前置库时</span><font color='#EA5455'><strong><span>要指定希望获得的版本</span></strong></font><span>，就算没有这个版本，也可以尝试获得兼容的最新版本。</span></p><p>&nbsp;</p><p><span>那么稍微改一下，把这两个参数加上：</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bad58d29ded1a8c010f0c.png">    <br>        <font size='2'><font color='#BBBFCA'><!--这里写图注-->    </font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>上述版本号的命名规则我指定如下：</span></p><p><span>类似于v0.1.0-rc.2的形式划分</span></p><p><span>即</span><strong><font size='4'><span>主版本号-次版本号-修订号-预发布标签</span></font></strong></p><blockquote><p><strong><span>●主版本号</span></strong><span>：更改后会</span><font color='#EA5455'><strong><span>不兼容</span></strong></font><span>以前的版本时增加</span></p><p><strong><span>●次版本号</span></strong><span>：有新功能时或者增加</span></p><p><strong><span>●修订号</span></strong><span>：正式版本有bug修复时增加</span></p><p><strong><span>●预发布标签</span></strong><span>：开发测试版本有新功能或修复时增加</span></p></blockquote><p><span> </span></p><p><span>预发布分为三个阶段：</span></p><blockquote><p><strong><span>◆alpha阶段</span></strong><span>：埋头写代码，单元测试通过，能运行就算完</span></p><p><strong><span>◆beta阶段</span></strong><span>：对新功能添加一些有的没的接口，兼容性测试和运行日志的记录</span></p><p><strong><span>◆rc阶段</span></strong><span>：把插件扔到服里运行一阵子观察日志和有没有报错</span></p></blockquote><p>&nbsp;</p><p><span>	</span><span>这样的话如果lua指定需要的版本是v0.1.0-beta.2，但是共享表中没有这个版本，只有v0.1.0-rc.5，那么注册函数就可以把这个版本的前置给出来，因为是兼容的。</span></p><p>&nbsp;</p><p><span>	</span><span>如果此时共享表中只有v1.1.0-rc.1，或者v0.1.0-beta.1，则无法获得任何版本的前置库，因为都不兼容。</span></p><p>&nbsp;</p><hr /><p>&nbsp;</p><p><span>对于其他GMI系前置也是一样的：</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bb06fd29ded1a8c03cb9f.png">    <br>        <font size='2'><font color='#BBBFCA'><!--这里写图注-->    </font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>虽然说GMI系前置是</span><font color='#EA5455'><strong><span>本身就需要前置</span></strong></font><span>的：</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bb194d29ded1a8c04dcf7.png">    <br>        <font size='2'><font color='#BBBFCA'><!--这里写图注-->    </font></font>        </font></font>    </center></div><p><span>但是我希望lua不用去管这些复杂的依赖关系，拿了用就完事，</span><font color='#EA5455'><strong><span>累活留给go</span></strong></font><span>。</span></p><p>&nbsp;</p><p><span>那么至此，lua插件部分就算写完了，接下来就是重头戏go前置插件的编写。</span></p><hr /><p>&nbsp;</p><p><span>	</span><span>从上面的简短的lua代码可知，go插件需要往共享表指定位置放入一个注册函数，接受</span><font color='#EA5455'><strong><span>lua插件框架</span></strong></font><span>和</span><font color='#EA5455'><strong><span>版本号</span></strong></font><span>。</span></p><p>&nbsp;</p><p><span>	</span><span>然后这个注册函数要看看前置库有没有自己的前置，有的话要先等那个前置运行，以此类推，而且可能不止依赖一个前置。</span></p><p>&nbsp;</p><p><span>也就是说，各个前置之间的依赖关系可能像一个蜘蛛网一样杂乱，你需要写一个逻辑解决这个问题...</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bb481d29ded1a8c078039.png">    <br>        <font size='2'><font color='#BBBFCA'>我？</font></font>        </font></font>    </center></div><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p><font size='5'><font color='#EA5455'><strong><span>开玩乐，写不了一点</span></strong></font></font></p><p><span>这一看就是要用到图什么的高级数据结构，直接求助三方库</span></p><p>&nbsp;</p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bb6e1d29ded1a8c09e15c.png">    <br>        <font size='2'><font color='#BBBFCA'><!--这里写图注-->    </font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>ai给了几个库，但是我是想写成lua插件也可用的，所以命令生成和编译时注入之类的库就算了</span></p><p>&nbsp;</p><p><font color='#62D2A2'><strong><span>好消息</span></strong></font><span>：dig库是代码声明依赖的，可以用</span></p><p>&nbsp;</p><p><font color='#EA5455'><strong><span>坏消息</span></strong></font><span>：需要显式声明依赖数据结构类型，一跨插件，go结构的访问就变得麻烦起来了</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bc0abd29ded1a8c12422e.png">    <br>        <font size='2'><font color='#BBBFCA'>需要明着写是什么数据结构</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><font color='#62D2A2'><strong><span>好消息</span></strong></font><span>：可以全部视为any类型，然后用标签分辨</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bc1ddd29ded1a8c134d7e.png">    <br>        <font size='2'><font color='#BBBFCA'>用标签区别同一种依赖类型</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><font color='#EA5455'><strong><span>坏消息</span></strong></font><span>：如果有多个前置，标签只能写在结构中，对go插件没影响</span><font size='1'><font color='#BBBFCA'><span>但也麻烦</span></font></font><span>，但lua插件是构建不了原本不存在的结构的</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bc2a8d29ded1a8c13fd7a.png">    <br>        <font size='2'><font color='#BBBFCA'>go插件写这个结构很容易，lua自定义就难了</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>难绷，虽然功能很接近了，但是还是用不了</span></p><p>&nbsp;</p><hr /><p><span>再花时间寻找后，找到了一个基于这个dig的增强库fx库</span></p><p>&nbsp;</p><p><font color='#62D2A2'><strong><span>好消息</span></strong></font><span>：fx库多个依赖不用写结构</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bc3f2d29ded1a8c150950.png">    <br>        <font size='2'><font color='#BBBFCA'>可以直接传入字符串标签</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>	</span><span>这回可以了，我们可以把所有前置都视作any类型，然后用字符串分辨它们。</span></p><p>&nbsp;</p><p><span>	</span><span>这样每次我们添加一个go前置，都说明这个</span><font color='#EA5455'><strong><span>前置的名字</span></strong></font><span>和</span><font color='#EA5455'><strong><span>需要前置们的名 字</span></strong></font><span>。</span></p><p>&nbsp;</p><p><span>	</span><span>后面每次调用时，fx库会根据这些名字自动分析要按照顺序执行哪些前置，并执行返回。</span></p><p>&nbsp;</p><p><span>	</span><span>至此，前置管理的部分解决了，虽然还需要我们对fx库进行一些包装才能实现上面的功能，但好歹核心功能是解决了。</span></p><p>&nbsp;</p><hr /><p>&nbsp;</p><p><span>然后剩下版本管理，我们还要实现一个逻辑来处理：</span></p><ul><li><p><span>不同版本需要的前置不一样，要声明</span></p></li><li><p><span>附属插件要求版本时要提供给它</span></p></li><li><p><span>要求版本不存在时要提供兼容版本</span></p></li></ul><p><span>也就是要写一个版本管理器</span></p><p>&nbsp;</p><p><span>分析这三个功能，很容易看到，别的功能都很好实现，就是版本比较有些麻烦</span></p><p>&nbsp;</p><p><span>还是打算求助于三方库</span></p><p>&nbsp;</p><p><span>一番读文档找下来，go-verion库对我制定的版本规则相性最好，也提供了版本比较功能</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bc9f5d29ded1a8c1a5c6c.png">    <br>        <font size='2'><font color='#BBBFCA'>支持的版本格式还挺多，正好包括了我们的格式</font></font>        </font></font>    </center></div><p>&nbsp;</p><hr /><p>&nbsp;</p><p><span>现在需要的两个基础功能</span><font size='1'><font color='#BBBFCA'><span>前置管理和版本管理</span></font></font><span>的核心库已经找好了，开始包装实现它们。</span></p><p>&nbsp;</p><p><span>先看写在哪里。</span></p><p><span>这两个功能写出来就是打算管理所有前置的，因此需要写在最底层的工具库</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bcc26d29ded1a8c1c23c2.png">    <br>        <font size='2'><font color='#BBBFCA'>也符合工具库仅工具不影响游戏的定位</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>看看之前定好的前置库框架</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670ba853d29ded1a8cfd9bc8.png">    <br>        <font size='2'><font color='#BBBFCA'></font></font>        </font></font>    </center></div><p><span>稍微完善一下：</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bd05ed29ded1a8c1f8627.png">    <br>        <font size='2'><font color='#BBBFCA'><!--这里写图注-->    </font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>前置库内部则划分为：</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670c782ad29ded1a8c8d5b2b.png">    <br>        <font size='2'><font color='#BBBFCA'>单例是所有插件共用一个</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>前置库的框架也写好了，准备写插件！</span></p><p>&nbsp;</p><hr /><p>&nbsp;</p><p><span>写go插件，要先了解go插件的执行逻辑</span></p><p><span>在机器人开源库中可以找到</span></p><p><font size='2'><font color='#00A8CC'><strong><span>开源库</span></strong><span>：</span></font><font color='#FC5185'><strong><span>github.com/OmineDev/neomega-backbone</span></strong></font></font></p><p>&nbsp;</p><p><span>从上可知，go插件分为四个阶段:</span></p><div>    <center>    <img src="https://i0.hdslb.com/bfs/article/b2fe4cf351e5d791ec1ab85b558c58bd310772963.png@1256w_868h_!web-article-pic.avif">    <br>        <font size='2'><font color='#BBBFCA'>顺序从上到下，但在横向上是乱序的</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>	</span><span>前两个Init和Inject用来获取配置和框架，所以一般写代码从Inject开始写，即</span><font color='#EA5455'><strong><span>我们只关注后三个阶段</span></strong></font><span>。</span></p><p>&nbsp;</p><div>    <center>    <img src="https://pic.imgdb.cn/item/670c6ce2d29ded1a8c8437a4.png">    <br>        <font size='2'><font color='#BBBFCA'>lua插件只开放了最后一个阶段</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>	</span><span>由上图可知go插件和lua插件的共同阶段是最后一个Activate阶段，这也就意味着前置库必须在这个阶段前完成部署，即</span><font color='#EA5455'><strong><span>前置只关注中间两个阶段</span></strong></font><span>。</span></p><p>&nbsp;</p><p><span>	</span><span>再由之前选好的前置管理器核心fx库工作原理可知，获取前置的逻辑是</span><font color='#EA5455'><strong><span>前置先把所有依赖进行声明，插件需要时才会生成</span></strong></font><span>。</span></p><p>&nbsp;</p><p><span>	</span><span>那么必须等工具库把前置管理器放入共享表后，GMI系前置库们才能开始运行，即</span><font color='#EA5455'><strong><span>工具库在Inject阶段部署，其余前置在BeforeActivate阶段部署</span></strong></font><span>，阶段数刚刚好够用。</span></p><p>&nbsp;</p><div>    <center>    <img src="https://pic.imgdb.cn/item/670c6a76d29ded1a8c82bc42.png">    <br>        <font size='2'><font color='#BBBFCA'>— 表示没有要求可随意写</font></font>        </font></font>    </center></div><div>    <center>    <img src="https://pic.imgdb.cn/item/670c6b7bd29ded1a8c83612f.png">    <br>        <font size='2'><font color='#BBBFCA'><!--这里写图注-->    </font></font>        </font></font>    </center></div><p>&nbsp;</p><hr /><p>&nbsp;</p><p><span>至此，框架设计算是告一段落，开始码代码</span></p><p>&nbsp;</p><p><span>具体代码没啥看头，每个部分发两张图意思意思即可，</span><font color='#EA5455'><strong><span>无需也没必要细看图</span></strong></font></p><p>&nbsp;</p><p><span>先根据前置库框架建立文件夹</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670c6ee7d29ded1a8c865187.png">    <br>        <font size='2'><font color='#BBBFCA'>common是接口定义，i18n是中英文，不重要</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>然后在Inject阶段生成核心即可，核心生成后应该要自动注入共享表</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670cee69d29ded1a8cfe8598.png">    <br>        <font size='2'><font color='#BBBFCA'>所有代码都是为了最后的注入</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>注入流程分为两个部分，</span><font color='#EA5455'><strong><span>注入行为本身</span></strong></font><span>和</span><font color='#EA5455'><strong><span>注入物的生成</span></strong></font><span>。</span></p><p>&nbsp;</p><p><span>注入行为机器人本身就有，只需要简单适配一下就行</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670c73e3d29ded1a8c8a2a32.png">    <br>        <font size='2'><font color='#BBBFCA'><!--这里写图注-->    </font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>注入物的生成就复杂些，看之前的lua代码</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670bad58d29ded1a8c010f0c.png">    <br>        <font size='2'><font color='#BBBFCA'>是一个接受框架和版本，返回实例的函数</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>综合fx库的特性，我制定了注册函数的流程如下：</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670d1f41d29ded1a8c3d748f.png">    <br>        <font size='2'><font color='#BBBFCA'>fx的前置管理是一次性的，只能每次用单例生成新临时的</font></font>        </font></font>    </center></div><p>&nbsp;</p><p><span>码代码</span></p><div>    <center>    <img src="https://pic.imgdb.cn/item/670d2132d29ded1a8c3f3278.png">    <br>        <font size='2'><font color='#BBBFCA'>只展示关键节点的逻辑，剩下一大坨代码就不放了</font></font>        </font></font>    </center></div><p>&nbsp;</p></div></div>
+</body>
+</html>
